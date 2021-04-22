@@ -3,10 +3,8 @@ Ext.define('calculator-2.view.calculator.calculatorView', {
 
         xtype: 'calculatorview',
         title: 'Clipboard',
-        layout:'center',
         items: [{
             xtype: 'calculatorpannelview'
-          
         }]
         
   })

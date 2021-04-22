@@ -3,26 +3,34 @@ Ext.define('calculator-2.view.history.histroyView', {
 extend: 'Ext.grid.Grid',
 layout: 'hbox',
 xtype:'historyview',
-listeners: {
-    select: function(grid, record) {
-        Ext.toast('You selected ' + record.data.name + '!');
-    }
-},
- 
+id:'historyview',
+controller:'historyviewcontroller',
 selectable: {
     mode: 'single'
 },
  
-title: 'Pokemon List',
+title: 'Calculos',
+
 columns: [{
     text: 'Calculo',
-    dataIndex: 'calculo'
+    dataIndex: 'calculo',
+    flex:2,
+    
 },{
     text:'Resultado',
-    dataIndex:'resultado'
+    dataIndex:'resultado',
+    flex:1,
+
 }],
 
-store : {type:'historystore'}
+store : {type:'historystore'},
 
+items :[
+    {
+        xtype:'button',
+        handler:'resetGrid',
+        text:'reset'
+    }
+]
  
 });
